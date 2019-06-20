@@ -4,17 +4,7 @@ body {
 }
 
 body .loaders-wrapper {
-  width: 100%;
-  height: 100vh;
-  background-color: azure;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  display: none;
 }
 
 body .loaders-wrapper .loader-dots--contener {
@@ -102,5 +92,33 @@ body .loaders-wrapper .loader-spinners--contener {
     border-top: 12px solid #7f7f80;
     border-bottom: 12px solid #7f7f8081;
   }
+}
+
+body .loaded {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: azure;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+body .display {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: azure;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 /*# sourceMappingURL=style.css.map */
