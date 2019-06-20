@@ -1,0 +1,41 @@
+{
+  "name": "loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdir sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf css/*",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:browser-sync": "browser-sync  start --server --files css/*.css *.html js/*.js",
+    "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all -s build-dev:sass build:autoprefixer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer-cli": "*",
+    "browser-sync": "*",
+    "globstar": "*",
+    "html-validator-cli": "*",
+    "mkdirp": "*",
+    "node-sass": "*",
+    "npm-run-all": "*",
+    "nu-html-checker": "*",
+    "onchange": "*",
+    "rimraf": "*",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "nodemailer": "^6.1.1"
+  }
+}
